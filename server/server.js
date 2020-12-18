@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const PORT = 5000;
 
+let history = [];
 
 app.use(bodyParser.urlencoded({extended:true}))
 
@@ -22,12 +23,16 @@ app.post('/calculate', (req, res) => {
   
 });
 
-let history = [];
+app.get('/calculate', (req, res) => {
+    
+    res.send(history);
+  
+});
 
 function calculate(equation) {
     let opperator = equation.opperator
-    let firstNum = equation.firstNum;
-    let secondNum = equation.secondNum;
+    let firstNum = Number(equation.firstNum);
+    let secondNum = Number(equation.secondNum);
     let result;
 
     if (opperator === '+') {

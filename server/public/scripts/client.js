@@ -11,6 +11,20 @@ function handleReady() {
     $('#clrBtn').on('click', clrBtn);
 }
 
+function renderToDom() {
+    $.ajax({
+        url : '/calculate',
+        type : 'GET'
+    }).then(function(response){
+        
+        let history = response;
+
+        console.log(history);
+    
+
+    });
+}
+
 let equation = {};
 
 function plusBtn() {
@@ -43,9 +57,10 @@ function eqBtn() {
     }).then(function(response) {
        
         console.log(response);
+        renderToDom();
 
     });
-    
+
 }
 
 function clrBtn() {
