@@ -36,3 +36,10 @@ function eqBtn() {
     
     console.log(equation);
 }
+
+function clrBtn() {
+    $('#firstNum').val('');
+    $('#secondNum').val('');
+    equation = {};
+    console.log(equation);
+}
