@@ -35,6 +35,17 @@ function eqBtn() {
     equation.secondNum = $('#secondNum').val(),
     
     console.log(equation);
+
+    $.ajax({
+        url: '/calculate',
+        type: 'POST',
+        data: equation
+    }).then(function(response) {
+       
+        console.log(response);
+
+    });
+    
 }
 
 function clrBtn() {
