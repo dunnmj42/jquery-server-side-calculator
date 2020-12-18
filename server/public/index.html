@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="./vendors/jquery-3.5.1.min.js"></script>
+    <script src="./scripts/client.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Calculator</title>
 </head>
 <body>
-    
+    <h1>Server Side Calculator</h1>
+    <div class="calcInputs">
+        <input type="number" id="firstNum" class="calcField">
+        <button id="plusBtn">+</button>
+        <button id="subBtn">-</button>
+        <button id="multBtn">*</button>
+        <button id="diviBtn">/</button>
+        <input type="number" id="secondNum" class="calcField">
+        <button id="eqBtn">=</button>
+        <button id="clrBtn">C</button>
+    </div>
+    <div class="calcOutput">
+        <h1 id="calcAnswer">
+            <!-- answer here -->
+        </h1>
+    </div>
+    <div class="calcHist">
+        <ul id="historyList">
+            <!-- history here -->
+        </ul>
+    </div>
 </body>
 </html>
