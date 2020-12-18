@@ -18,9 +18,24 @@ function renderToDom() {
     }).then(function(response){
         
         let history = response;
+        let lastAnswer = history[history.length - 1].result;
 
         console.log(history);
-    
+        
+        $('#calcAnswer').text(`${lastAnswer}`)
+
+        $('#historyList').empty();
+
+        for (let i = 0; i < history.length; i++) {
+            
+            $('#historyList').append(`<li>
+            ${history[i].firstNum}
+            ${history[i].opperator}
+            ${history[i].secondNum} = 
+            ${history[i].result}</li>
+            `);
+            
+        }
 
     });
 }
@@ -66,6 +81,7 @@ function eqBtn() {
 function clrBtn() {
     $('#firstNum').val('');
     $('#secondNum').val('');
+    $('#calcAnswer').text('');
     equation = {};
     console.log(equation);
 }
