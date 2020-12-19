@@ -9,8 +9,9 @@ function handleReady() {
   $("#diviBtn").on("click", diviBtn);
   $("#eqBtn").on("click", eqBtn);
   $("#clrBtn").on("click", clrBtn);
-  $(".numBtns").on("click", numKey);
+  $(".numBtns").on("click", ".key", numKey);
   $("#delBtn").on("click", delBtn);
+  $("#historyList").on("click", ".histItem", recallHistory);
 }
 
 let equation = {};
@@ -42,7 +43,7 @@ function renderToDom() {
     $("#historyList").empty();
 
     for (let i = 0; i < history.length; i++) {
-      $("#historyList").append(`<li>
+      $("#historyList").append(`<li class="histItem" id="${i}">
             ${history[i].firstNum}
             ${history[i].operator}
             ${history[i].secondNum} = 
@@ -57,6 +58,12 @@ function plusBtn() {
 
   equation.firstNum = $("#calcDisplay").val();
 
+  if (!equation.firstNum) {
+    equation.firstNum = history[history.length - 1].result
+  }
+
+  $('#lastEq').children().text("");
+
   $("#calcDisplay").val("");
 
   $("#firstNum").text(equation.firstNum);
@@ -67,6 +74,12 @@ function subBtn() {
   equation.operator = "-";
 
   equation.firstNum = $("#calcDisplay").val();
+
+  if (!equation.firstNum) {
+    equation.firstNum = history[history.length - 1].result
+  }
+
+  $('#lastEq').children().text("");
 
   $("#calcDisplay").val("");
 
@@ -79,6 +92,12 @@ function multBtn() {
 
   equation.firstNum = $("#calcDisplay").val();
 
+  if (!equation.firstNum) {
+    equation.firstNum = history[history.length - 1].result
+  }
+
+  $('#lastEq').children().text("");
+
   $("#calcDisplay").val("");
 
   $("#firstNum").text(equation.firstNum);
@@ -89,6 +108,12 @@ function diviBtn() {
   equation.operator = "/";
 
   equation.firstNum = $("#calcDisplay").val();
+
+  if (!equation.firstNum) {
+    equation.firstNum = history[history.length - 1].result
+  }
+
+  $('#lastEq').children().text("");
 
   $("#calcDisplay").val("");
 
@@ -134,4 +159,9 @@ function delBtn() {
     history = response;
     $("#historyList").empty();
   });
+}
+
+function recallHistory() {
+  let recallTarget = this.id
+  console.log("Recall target id is:", recallTarget);
 }
