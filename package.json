@@ -1,8 +1,8 @@
 {
   "name": "jquery-server-side-calculator",
   "version": "1.0.0",
-  "description": "[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md",
-  "main": "index.js",
+  "description": "Server Side Calculator",
+  "main": "index.html",
   "scripts": {
     "start" : "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/dunnmj42/jquery-server-side-calculator.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Michael Dunn",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dunnmj42/jquery-server-side-calculator/issues"
