@@ -39,7 +39,7 @@ function renderToDom() {
     for (let i = 0; i < history.length; i++) {
       $("#historyList").append(`<li>
             ${history[i].firstNum}
-            ${history[i].opperator}
+            ${history[i].operator}
             ${history[i].secondNum} = 
             ${history[i].result}</li>
             `);
@@ -50,7 +50,7 @@ function renderToDom() {
 let equation = {};
 
 function plusBtn() {
-  equation.opperator = "+";
+  equation.operator = "+";
 
   equation.firstNum = $("#calcDisplay").val()
 
@@ -58,7 +58,7 @@ function plusBtn() {
 }
 
 function subBtn() {
-  equation.opperator = "-";
+  equation.operator = "-";
 
   equation.firstNum = $("#calcDisplay").val()
 
@@ -66,7 +66,7 @@ function subBtn() {
 }
 
 function multBtn() {
-  equation.opperator = "*";
+  equation.operator = "*";
 
   equation.firstNum = $("#calcDisplay").val()
 
@@ -74,7 +74,7 @@ function multBtn() {
 }
 
 function diviBtn() {
-  equation.opperator = "/";
+  equation.operator = "/";
 
   equation.firstNum = $("#calcDisplay").val()
 

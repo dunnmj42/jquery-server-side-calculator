@@ -23,16 +23,16 @@ app.get("/calculate", (req, res) => {
 });
 
 function calculate(equation) {
-  let opperator = equation.opperator;
+  let operator = equation.operator;
   let firstNum = Number(equation.firstNum);
   let secondNum = Number(equation.secondNum);
   let result;
 
-  if (opperator === "+") {
+  if (operator === "+") {
     result = firstNum + secondNum;
-  } else if (opperator === "-") {
+  } else if (operator === "-") {
     result = firstNum - secondNum;
-  } else if (opperator === "*") {
+  } else if (operator === "*") {
     result = firstNum * secondNum;
   } else {
     result = firstNum / secondNum;
