@@ -10,7 +10,7 @@ Server Side Calculator is a single page app that functions as a basic calculator
 
 ## Built With
 
-HTML 5, CSS 3, Javascript, jQuery 3.5, Node.js 15.4, Express 4.17
+HTML 5, CSS 3, Bootstrap 5, Javascript, jQuery 3.5, Node.js 15.4, Express 4.17
 
 ## Acknowledgement
 Thanks to [Prime Digital Academy](https://www.primeacademy.io) who equipped and helped me to make this application a reality.
