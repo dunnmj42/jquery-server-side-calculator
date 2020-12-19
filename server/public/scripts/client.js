@@ -122,12 +122,14 @@ function diviBtn() {
 }
 
 function eqBtn() {
-  equation.secondNum = $("#calcDisplay").val();
-  $("#calcDisplay").val("");
-  console.log(equation);
-
+  if (!equation.secondNum) {
+    equation.secondNum = $("#calcDisplay").val();
+    $("#calcDisplay").val("");
+    console.log(equation);
+  } 
   if (equation.secondNum) {
     $("#secondNum").text(equation.secondNum);
+    console.log(equation);
     $.ajax({
       url: "/calculate",
       type: "POST",
@@ -144,10 +146,7 @@ function clrBtn() {
 
   equation = {};
   console.log(equation);
-  $("#firstNum").text("");
-  $("#operator").text("");
-  $("#secondNum").text("");
-  $("#result").text("");
+  $('#lastEq').children().text("");
 }
 
 function delBtn() {
@@ -163,5 +162,18 @@ function delBtn() {
 
 function recallHistory() {
   let recallTarget = this.id
+  let recallEq = history[recallTarget]
   console.log("Recall target id is:", recallTarget);
+  console.log(recallEq);
+
+  $('#lastEq').children().text("");
+
+  equation.firstNum = recallEq.firstNum
+  equation.operator = recallEq.operator
+  equation.secondNum = recallEq.secondNum
+
+  $("#firstNum").text(equation.firstNum);
+  $("#operator").text(equation.operator);
+  $("#secondNum").text(equation.secondNum);
+
 }
