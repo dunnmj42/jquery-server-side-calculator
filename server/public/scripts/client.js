@@ -59,10 +59,10 @@ function plusBtn() {
   equation.firstNum = $("#calcDisplay").val();
 
   if (!equation.firstNum) {
-    equation.firstNum = history[history.length - 1].result
+    equation.firstNum = history[history.length - 1].result;
   }
 
-  $('#lastEq').children().text("");
+  $("#lastEq").children().text("");
 
   $("#calcDisplay").val("");
 
@@ -76,10 +76,10 @@ function subBtn() {
   equation.firstNum = $("#calcDisplay").val();
 
   if (!equation.firstNum) {
-    equation.firstNum = history[history.length - 1].result
+    equation.firstNum = history[history.length - 1].result;
   }
 
-  $('#lastEq').children().text("");
+  $("#lastEq").children().text("");
 
   $("#calcDisplay").val("");
 
@@ -93,10 +93,10 @@ function multBtn() {
   equation.firstNum = $("#calcDisplay").val();
 
   if (!equation.firstNum) {
-    equation.firstNum = history[history.length - 1].result
+    equation.firstNum = history[history.length - 1].result;
   }
 
-  $('#lastEq').children().text("");
+  $("#lastEq").children().text("");
 
   $("#calcDisplay").val("");
 
@@ -110,10 +110,10 @@ function diviBtn() {
   equation.firstNum = $("#calcDisplay").val();
 
   if (!equation.firstNum) {
-    equation.firstNum = history[history.length - 1].result
+    equation.firstNum = history[history.length - 1].result;
   }
 
-  $('#lastEq').children().text("");
+  $("#lastEq").children().text("");
 
   $("#calcDisplay").val("");
 
@@ -126,7 +126,7 @@ function eqBtn() {
     equation.secondNum = $("#calcDisplay").val();
     $("#calcDisplay").val("");
     console.log(equation);
-  } 
+  }
   if (equation.secondNum) {
     $("#secondNum").text(equation.secondNum);
     console.log(equation);
@@ -146,7 +146,7 @@ function clrBtn() {
 
   equation = {};
   console.log(equation);
-  $('#lastEq').children().text("");
+  $("#lastEq").children().text("");
 }
 
 function delBtn() {
@@ -161,19 +161,18 @@ function delBtn() {
 }
 
 function recallHistory() {
-  let recallTarget = this.id
-  let recallEq = history[recallTarget]
+  let recallTarget = this.id;
+  let recallEq = history[recallTarget];
   console.log("Recall target id is:", recallTarget);
   console.log(recallEq);
 
-  $('#lastEq').children().text("");
+  $("#lastEq").children().text("");
 
-  equation.firstNum = recallEq.firstNum
-  equation.operator = recallEq.operator
-  equation.secondNum = recallEq.secondNum
+  equation.firstNum = recallEq.firstNum;
+  equation.operator = recallEq.operator;
+  equation.secondNum = recallEq.secondNum;
 
   $("#firstNum").text(equation.firstNum);
   $("#operator").text(equation.operator);
   $("#secondNum").text(equation.secondNum);
-
 }
