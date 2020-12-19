@@ -23,7 +23,6 @@ function renderToDom() {
         console.log(history);
         
         $('#calcAnswer').text(`${lastAnswer}`)
-
         $('#historyList').empty();
 
         for (let i = 0; i < history.length; i++) {
@@ -34,9 +33,7 @@ function renderToDom() {
             ${history[i].secondNum} = 
             ${history[i].result}</li>
             `);
-            
         }
-
     });
 }
 
@@ -69,13 +66,10 @@ function eqBtn() {
         url: '/calculate',
         type: 'POST',
         data: equation
-    }).then(function(response) {
-       
+    }).then(function(response) {     
         console.log(response);
         renderToDom();
-
     });
-
 }
 
 function clrBtn() {

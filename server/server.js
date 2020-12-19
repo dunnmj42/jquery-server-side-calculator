@@ -14,19 +14,14 @@ app.post('/calculate', (req, res) => {
     let equation = req.body;
   
     console.log(equation);
-
     calculate(equation);
-
     console.log(history);
-  
     res.sendStatus(201);
   
 });
 
 app.get('/calculate', (req, res) => {
-    
     res.send(history);
-  
 });
 
 function calculate(equation) {
