@@ -25,7 +25,7 @@ app.get("/calculate", (req, res) => {
 app.delete("/history", (req, res) => {
   history = [];
   res.send(history);
-})
+});
 
 function calculate(equation) {
   let operator = equation.operator;

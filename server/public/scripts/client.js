@@ -13,18 +13,19 @@ function handleReady() {
   $("#delBtn").on("click", delBtn);
 }
 
-function numKey(e){
-  let key = e.target
-  let value = key.textContent
-  
+let equation = {};
+let history = [];
+
+function numKey(e) {
+  let key = e.target;
+  let value = key.textContent;
+
   console.log(value);
 
-  $('#calcDisplay').val(function(n, c){
-    return c + value
-  })
+  $("#calcDisplay").val(function (n, c) {
+    return c + value;
+  });
 }
-
-let history = [];
 
 function renderToDom() {
   $.ajax({
@@ -36,7 +37,7 @@ function renderToDom() {
 
     console.log(history);
 
-    $("#result").text(` = ${lastEq.result}`)
+    $("#result").text(` = ${lastEq.result}`);
 
     $("#historyList").empty();
 
@@ -51,14 +52,12 @@ function renderToDom() {
   });
 }
 
-let equation = {};
-
 function plusBtn() {
   equation.operator = "+";
 
-  equation.firstNum = $("#calcDisplay").val()
+  equation.firstNum = $("#calcDisplay").val();
 
-  $("#calcDisplay").val("")
+  $("#calcDisplay").val("");
 
   $("#firstNum").text(equation.firstNum);
   $("#operator").text(equation.operator);
@@ -67,9 +66,9 @@ function plusBtn() {
 function subBtn() {
   equation.operator = "-";
 
-  equation.firstNum = $("#calcDisplay").val()
+  equation.firstNum = $("#calcDisplay").val();
 
-  $("#calcDisplay").val("")
+  $("#calcDisplay").val("");
 
   $("#firstNum").text(equation.firstNum);
   $("#operator").text(equation.operator);
@@ -78,9 +77,9 @@ function subBtn() {
 function multBtn() {
   equation.operator = "*";
 
-  equation.firstNum = $("#calcDisplay").val()
+  equation.firstNum = $("#calcDisplay").val();
 
-  $("#calcDisplay").val("")
+  $("#calcDisplay").val("");
 
   $("#firstNum").text(equation.firstNum);
   $("#operator").text(equation.operator);
@@ -89,18 +88,18 @@ function multBtn() {
 function diviBtn() {
   equation.operator = "/";
 
-  equation.firstNum = $("#calcDisplay").val()
+  equation.firstNum = $("#calcDisplay").val();
 
-  $("#calcDisplay").val("")
+  $("#calcDisplay").val("");
 
   $("#firstNum").text(equation.firstNum);
   $("#operator").text(equation.operator);
 }
 
 function eqBtn() {
-  equation.secondNum = $("#calcDisplay").val()
-  $("#calcDisplay").val("")
-    console.log(equation);
+  equation.secondNum = $("#calcDisplay").val();
+  $("#calcDisplay").val("");
+  console.log(equation);
 
   if (equation.secondNum) {
     $("#secondNum").text(equation.secondNum);
@@ -129,10 +128,10 @@ function clrBtn() {
 function delBtn() {
   $.ajax({
     url: "/history",
-    type: "DELETE"
+    type: "DELETE",
   }).then(function (response) {
     console.log(response);
     history = response;
-    $('#historyList').empty();
+    $("#historyList").empty();
   });
 }

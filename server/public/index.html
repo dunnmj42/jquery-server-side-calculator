@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./vendors/jquery-3.5.1.min.js"></script>
     <script src="./scripts/client.js"></script>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Calculator</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Server Side Calculator</h1>
     <div class="eqDisplay">
-        <h2 id="lastEq">
-            <span id="firstNum"></span>
-            <span id="operator"></span>
-            <span id="secondNum"></span>
-            <span id="result"></span>
-        </h2>
+      <h2 id="lastEq">
+        <span id="firstNum"></span>
+        <span id="operator"></span>
+        <span id="secondNum"></span>
+        <span id="result"></span>
+      </h2>
     </div>
     <div class="calcInputs">
-        <input type="text" id="calcDisplay" class="calcField">
-        <button class="oppBtn" id="plusBtn">+</button>
-        <button class="oppBtn" id="subBtn">-</button>
-        <button class="oppBtn" id="multBtn">*</button>
-        <button class="oppBtn" id="diviBtn">/</button>
-        <button id="eqBtn">=</button>
-        <button id="clrBtn">C</button>
+      <input type="text" id="calcDisplay" class="calcField" />
+      <button class="opBtn" id="plusBtn">+</button>
+      <button class="opBtn" id="subBtn">-</button>
+      <button class="opBtn" id="multBtn">*</button>
+      <button class="opBtn" id="diviBtn">/</button>
+      <button id="eqBtn">=</button>
+      <button id="clrBtn">C</button>
     </div>
     <div class="numBtns">
-        <button class="key">0</button>
-        <button class="key">1</button>
-        <button class="key">2</button>
-        <button class="key">3</button>
-        <button class="key">4</button>
-        <button class="key">5</button>
-        <button class="key">6</button>
-        <button class="key">7</button>
-        <button class="key">8</button>
-        <button class="key">9</button>
-        <button class="key">.</button>
+      <button class="key">0</button>
+      <button class="key">1</button>
+      <button class="key">2</button>
+      <button class="key">3</button>
+      <button class="key">4</button>
+      <button class="key">5</button>
+      <button class="key">6</button>
+      <button class="key">7</button>
+      <button class="key">8</button>
+      <button class="key">9</button>
+      <button class="key">.</button>
     </div>
     <div class="calcHist">
-        <button id="delBtn">Delete History</button>
-        <ul id="historyList">
-            <!-- history here -->
-        </ul>
+      <button id="delBtn">Delete History</button>
+      <ul id="historyList">
+        <!-- history here -->
+      </ul>
     </div>
-</body>
+  </body>
 </html>
