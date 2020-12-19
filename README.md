@@ -1,9 +1,19 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Server Side Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Server Side Calculator is a single page app that functions as a basic calculator. It takes in two values and an opperator, and the "=" button sends the equation to the server to be evaluated. Upon evaluation, the server then stores the history of equations evaluated, which it in turn sends back to the client to be rendered to the DOM as an unordered list. The "C" button will empty the input fields.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Screen Shot
+
+![App Screenshot](server/public/images/screenshot.png)
+
+## Built With
+
+HTML 5, CSS 3, Javascript, jQuery 3.5
+
+## Acknowledgement
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
+
+## Support
+If you have suggestions or issues, please email me at dunnmj42@gmail.com
