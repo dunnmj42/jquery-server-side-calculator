@@ -9,6 +9,16 @@ function handleReady() {
   $("#diviBtn").on("click", diviBtn);
   $("#eqBtn").on("click", eqBtn);
   $("#clrBtn").on("click", clrBtn);
+  $(".numBtns").on("click", numKey)
+}
+
+function numKey(e){
+  let key = e.target
+  let value = key.textContent
+  
+  console.log(value);
+
+  
 }
 
 function renderToDom() {
