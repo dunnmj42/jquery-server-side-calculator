@@ -1,4 +1,4 @@
-# Server Side Calculator
+# Server Side Calculator - STRETCH MODE
 
 ## Description
 
