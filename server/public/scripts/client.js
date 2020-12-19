@@ -9,7 +9,8 @@ function handleReady() {
   $("#diviBtn").on("click", diviBtn);
   $("#eqBtn").on("click", eqBtn);
   $("#clrBtn").on("click", clrBtn);
-  $(".numBtns").on("click", numKey)
+  $(".numBtns").on("click", numKey);
+  $("#delBtn").on("click", delBtn);
 }
 
 function numKey(e){
@@ -23,12 +24,14 @@ function numKey(e){
   })
 }
 
+let history = [];
+
 function renderToDom() {
   $.ajax({
     url: "/calculate",
     type: "GET",
   }).then(function (response) {
-    let history = response;
+    history = response;
     let lastAnswer = history[history.length - 1].result;
 
     console.log(history);
@@ -103,4 +106,15 @@ function clrBtn() {
 
   equation = {};
   console.log(equation);
+}
+
+function delBtn() {
+  $.ajax({
+    url: "/history",
+    type: "DELETE"
+  }).then(function (response) {
+    console.log(response);
+    history = response;
+    $('#historyList').empty();
+  });
 }

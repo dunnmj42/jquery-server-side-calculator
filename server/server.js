@@ -22,6 +22,11 @@ app.get("/calculate", (req, res) => {
   res.send(history);
 });
 
+app.delete("/history", (req, res) => {
+  history = [];
+  res.send(history);
+})
+
 function calculate(equation) {
   let operator = equation.operator;
   let firstNum = Number(equation.firstNum);
