@@ -18,7 +18,9 @@ function numKey(e){
   
   console.log(value);
 
-  
+  $('#calcDisplay').val(function(n, c){
+    return c + value
+  })
 }
 
 function renderToDom() {
@@ -31,7 +33,7 @@ function renderToDom() {
 
     console.log(history);
 
-    $("#calcAnswer").text(`${lastAnswer}`);
+    $("#calcDisplay").val(`${lastAnswer}`);
     $("#historyList").empty();
 
     for (let i = 0; i < history.length; i++) {
@@ -49,39 +51,56 @@ let equation = {};
 
 function plusBtn() {
   equation.opperator = "+";
+
+  equation.firstNum = $("#calcDisplay").val()
+
+  $("#calcDisplay").val("")
 }
 
 function subBtn() {
   equation.opperator = "-";
+
+  equation.firstNum = $("#calcDisplay").val()
+
+  $("#calcDisplay").val("")
 }
 
 function multBtn() {
   equation.opperator = "*";
+
+  equation.firstNum = $("#calcDisplay").val()
+
+  $("#calcDisplay").val("")
 }
 
 function diviBtn() {
   equation.opperator = "/";
+
+  equation.firstNum = $("#calcDisplay").val()
+
+  $("#calcDisplay").val("")
 }
 
 function eqBtn() {
-  (equation.firstNum = $("#firstNum").val()),
-    (equation.secondNum = $("#secondNum").val()),
+  equation.secondNum = $("#calcDisplay").val()
+  $("#calcDisplay").val("")
     console.log(equation);
 
-  $.ajax({
-    url: "/calculate",
-    type: "POST",
-    data: equation,
-  }).then(function (response) {
-    console.log(response);
-    renderToDom();
-  });
+  if (equation.secondNum) {
+    $.ajax({
+      url: "/calculate",
+      type: "POST",
+      data: equation,
+    }).then(function (response) {
+      console.log(response);
+      renderToDom();
+    });
+  }
 }
 
 function clrBtn() {
-  $("#firstNum").val("");
-  $("#secondNum").val("");
-  $("#calcAnswer").text("");
+  $("#calcDisplay").val("");
+
   equation = {};
   console.log(equation);
 }
