@@ -136,6 +136,7 @@ function eqBtn() {
       data: equation,
     }).then(function (response) {
       console.log(response);
+      equation = {};
       renderToDom();
     });
   }
@@ -156,6 +157,7 @@ function delBtn() {
   }).then(function (response) {
     console.log(response);
     history = response;
+    $("#lastEq").children().text("");
     $("#historyList").empty();
   });
 }
