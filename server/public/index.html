@@ -10,6 +10,14 @@
 </head>
 <body>
     <h1>Server Side Calculator</h1>
+    <div class="eqDisplay">
+        <h2 id="lastEq">
+            <span id="firstNum"></span>
+            <span id="operator"></span>
+            <span id="secondNum"></span>
+            <span id="result"></span>
+        </h2>
+    </div>
     <div class="calcInputs">
         <input type="text" id="calcDisplay" class="calcField">
         <button class="oppBtn" id="plusBtn">+</button>
@@ -31,11 +39,6 @@
         <button class="key">8</button>
         <button class="key">9</button>
         <button class="key">.</button>
-    </div>
-    <div class="calcOutput">
-        <h1 id="calcAnswer">
-            <!-- answer here -->
-        </h1>
     </div>
     <div class="calcHist">
         <button id="delBtn">Delete History</button>

@@ -32,11 +32,12 @@ function renderToDom() {
     type: "GET",
   }).then(function (response) {
     history = response;
-    let lastAnswer = history[history.length - 1].result;
+    let lastEq = history[history.length - 1];
 
     console.log(history);
 
-    $("#calcDisplay").val(`${lastAnswer}`);
+    $("#result").text(` = ${lastEq.result}`)
+
     $("#historyList").empty();
 
     for (let i = 0; i < history.length; i++) {
@@ -58,6 +59,9 @@ function plusBtn() {
   equation.firstNum = $("#calcDisplay").val()
 
   $("#calcDisplay").val("")
+
+  $("#firstNum").text(equation.firstNum);
+  $("#operator").text(equation.operator);
 }
 
 function subBtn() {
@@ -66,6 +70,9 @@ function subBtn() {
   equation.firstNum = $("#calcDisplay").val()
 
   $("#calcDisplay").val("")
+
+  $("#firstNum").text(equation.firstNum);
+  $("#operator").text(equation.operator);
 }
 
 function multBtn() {
@@ -74,6 +81,9 @@ function multBtn() {
   equation.firstNum = $("#calcDisplay").val()
 
   $("#calcDisplay").val("")
+
+  $("#firstNum").text(equation.firstNum);
+  $("#operator").text(equation.operator);
 }
 
 function diviBtn() {
@@ -82,6 +92,9 @@ function diviBtn() {
   equation.firstNum = $("#calcDisplay").val()
 
   $("#calcDisplay").val("")
+
+  $("#firstNum").text(equation.firstNum);
+  $("#operator").text(equation.operator);
 }
 
 function eqBtn() {
@@ -90,6 +103,7 @@ function eqBtn() {
     console.log(equation);
 
   if (equation.secondNum) {
+    $("#secondNum").text(equation.secondNum);
     $.ajax({
       url: "/calculate",
       type: "POST",
@@ -106,6 +120,10 @@ function clrBtn() {
 
   equation = {};
   console.log(equation);
+  $("#firstNum").text("");
+  $("#operator").text("");
+  $("#secondNum").text("");
+  $("#result").text("");
 }
 
 function delBtn() {
