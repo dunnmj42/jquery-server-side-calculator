@@ -6,5 +6,10 @@ body {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #e9ecef;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
 }
+
+/* I really wish I would have had time to refine the style a little more, but I spent
+a little too much time working on functionality. I ended up sort of sloppily 
+applying bootstrap, and didn't have the time to refine it and make it a little
+more appealing and "natural" looking. More like a physical calculator. */

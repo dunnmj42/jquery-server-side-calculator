@@ -19,26 +19,27 @@ let history = [];
 
 function numKey(e) {
   let key = e.target;
-  let value = key.textContent;
+  let value = key.textContent; // get button element text content for value
 
   console.log(value);
 
   $("#calcDisplay").val(function (n, c) {
-    return c + value;
+    return c + value; // "append" new button inputs to input field
   });
 }
 
 function renderToDom() {
+  // ajax get lives here
   $.ajax({
     url: "/calculate",
     type: "GET",
   }).then(function (response) {
     history = response;
-    let lastEq = history[history.length - 1];
+    let lastEq = history[history.length - 1]; // most recent (current) evaluation
 
     console.log(history);
 
-    $("#result").text(` = ${lastEq.result}`);
+    $("#result").text(` = ${lastEq.result}`); // result display
 
     $("#historyList").empty();
 
@@ -48,10 +49,13 @@ function renderToDom() {
             ${history[i].operator}
             ${history[i].secondNum} = 
             ${history[i].result}</li>
-            `);
+            `); // history list append
     }
   });
 }
+
+// equation operator functions: this could have maybe been more terse by applying
+// the textContent method I ended up using above.
 
 function plusBtn() {
   equation.operator = "+";
@@ -121,6 +125,9 @@ function diviBtn() {
   $("#operator").text(equation.operator);
 }
 
+// "equals" or submit button: this does some null checks, allows for concurrent
+// evaluation, and makes the ajax req to server
+
 function eqBtn() {
   if (!equation.secondNum) {
     equation.secondNum = $("#calcDisplay").val();
@@ -142,6 +149,8 @@ function eqBtn() {
   }
 }
 
+// This one clears the input field and the "current" evaluation
+
 function clrBtn() {
   $("#calcDisplay").val("");
 
@@ -149,6 +158,8 @@ function clrBtn() {
   console.log(equation);
   $("#lastEq").children().text("");
 }
+
+// delete history, ajax DELETE, and clearing history from DOM
 
 function delBtn() {
   $.ajax({
@@ -161,6 +172,10 @@ function delBtn() {
     $("#historyList").empty();
   });
 }
+
+// targets and recalls history equation for reevaluation, I wanted to get the
+// cursor to stop turning into a text cursor on mouseover for the history items,
+// but didn't get to it.
 
 function recallHistory() {
   let recallTarget = this.id;

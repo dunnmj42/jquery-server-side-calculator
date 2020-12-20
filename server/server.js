@@ -27,6 +27,9 @@ app.delete("/history", (req, res) => {
   res.send(history);
 });
 
+// evaluation function: This could have probably been the switch statement that
+// I always forget about, and it would have been a little more terse. Maybe.
+
 function calculate(equation) {
   let operator = equation.operator;
   let firstNum = Number(equation.firstNum);

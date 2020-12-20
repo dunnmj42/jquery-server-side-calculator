@@ -5,61 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./vendors/jquery-3.5.1.min.js"></script>
     <script src="./scripts/client.js"></script>
-    <link rel="stylesheet" href="./styles/bootstrap.css">
+    <link rel="stylesheet" href="./styles/bootstrap.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Calculator</title>
   </head>
   <body>
     <h1 class="jumbotron">Server Side Calculator</h1>
     <div class="container-sm">
-        <div class="container-sm eqDisplay">
-        <h2 id="lastEq"> 
-            <span id="firstNum"></span>
-            <span id="operator"></span>
-            <span id="secondNum"></span>
-            <span id="result"></span> 
+      <div class="container-sm eqDisplay">
+        <h2 id="lastEq">
+          <span id="firstNum"></span>
+          <span id="operator"></span>
+          <span id="secondNum"></span>
+          <span id="result"></span>
         </h2>
+      </div>
+      <div class="container-sm">
+        <div class="row">
+          <input type="number" id="calcDisplay" class="col-sm calcField" />
+          <button id="clrBtn" class="col-sm btn btn-outline-dark">C</button>
         </div>
-        <div class="container-sm">
-            <div class="row">
-                <input type="text" id="calcDisplay" class="col-sm calcField" />
-                <button id="clrBtn" class="col-sm btn btn-outline-dark">C</button>
-            </div>
+      </div>
+      <div class="container-sm numBtns">
+        <div class="row">
+          <button class="col-sm btn btn-outline-dark key">7</button>
+          <button class="col-sm btn btn-outline-dark key">8</button>
+          <button class="col-sm btn btn-outline-dark key">9</button>
+          <button class="col-sm btn btn-outline-dark opBtn" id="plusBtn">
+            +
+          </button>
         </div>
-        <div class="container-sm numBtns">
-            <div class="row">
-                <button class="col-sm btn btn-outline-dark key">7</button>
-                <button class="col-sm btn btn-outline-dark key">8</button>
-                <button class="col-sm btn btn-outline-dark key">9</button>
-                <button class="col-sm btn btn-outline-dark opBtn" id="plusBtn">+</button>
-            </div>
-            <div class="row">
-                <button class="col-sm btn btn-outline-dark key">4</button>
-                <button class="col-sm btn btn-outline-dark key">5</button>
-                <button class="col-sm btn btn-outline-dark key">6</button>
-                <button class="col-sm btn btn-outline-dark opBtn" id="subBtn">-</button>
-            </div>
-            <div class="row">
-                <button class="col-sm btn btn-outline-dark key">1</button>
-                <button class="col-sm btn btn-outline-dark key">2</button>
-                <button class="col-sm btn btn-outline-dark key">3</button>
-                <button class="col-sm btn btn-outline-dark opBtn" id="multBtn">*</button>
-            </div>
-            <div class="row">
-                <button class="col-sm btn btn-outline-dark key">0</button>
-                <button class="col-sm btn btn-outline-dark key">.</button>
-                <button class="col-sm btn btn-outline-dark" id="eqBtn">=</button>
-                <button class="col-sm btn btn-outline-dark opBtn" id="diviBtn">/</button>
-            </div>
-            <div class="row">
-                <div class="col-sm calcHist">
-                    <ul class="list-group"id="historyList">
-                      <!-- history here -->
-                    </ul>
-                    <button class="btn btn-outline-dark" id="delBtn">Delete History</button>
-                  </div>
-            </div>
+        <div class="row">
+          <button class="col-sm btn btn-outline-dark key">4</button>
+          <button class="col-sm btn btn-outline-dark key">5</button>
+          <button class="col-sm btn btn-outline-dark key">6</button>
+          <button class="col-sm btn btn-outline-dark opBtn" id="subBtn">
+            -
+          </button>
         </div>
+        <div class="row">
+          <button class="col-sm btn btn-outline-dark key">1</button>
+          <button class="col-sm btn btn-outline-dark key">2</button>
+          <button class="col-sm btn btn-outline-dark key">3</button>
+          <button class="col-sm btn btn-outline-dark opBtn" id="multBtn">
+            *
+          </button>
+        </div>
+        <div class="row">
+          <button class="col-sm btn btn-outline-dark key">0</button>
+          <button class="col-sm btn btn-outline-dark key">.</button>
+          <button class="col-sm btn btn-outline-dark" id="eqBtn">=</button>
+          <button class="col-sm btn btn-outline-dark opBtn" id="diviBtn">
+            /
+          </button>
+        </div>
+        <div class="row">
+          <div class="col-sm calcHist">
+            <ul class="list-group" id="historyList">
+              <!-- history here -->
+            </ul>
+            <button class="btn btn-outline-dark" id="delBtn">
+              Delete History
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
