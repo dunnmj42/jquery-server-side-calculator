@@ -11,41 +11,55 @@
   </head>
   <body>
     <h1>Server Side Calculator</h1>
-    <div class="eqDisplay">
-      <h2 id="lastEq">
-        <span id="firstNum"></span>
-        <span id="operator"></span>
-        <span id="secondNum"></span>
-        <span id="result"></span>
-      </h2>
-    </div>
-    <div class="calcInputs">
-      <input type="text" id="calcDisplay" class="calcField" />
-      <button class="opBtn" id="plusBtn">+</button>
-      <button class="opBtn" id="subBtn">-</button>
-      <button class="opBtn" id="multBtn">*</button>
-      <button class="opBtn" id="diviBtn">/</button>
-      <button id="eqBtn">=</button>
-      <button id="clrBtn">C</button>
-    </div>
-    <div class="numBtns">
-      <button class="key">0</button>
-      <button class="key">1</button>
-      <button class="key">2</button>
-      <button class="key">3</button>
-      <button class="key">4</button>
-      <button class="key">5</button>
-      <button class="key">6</button>
-      <button class="key">7</button>
-      <button class="key">8</button>
-      <button class="key">9</button>
-      <button class="key">.</button>
-    </div>
-    <div class="calcHist">
-      <button id="delBtn">Delete History</button>
-      <ul id="historyList">
-        <!-- history here -->
-      </ul>
+    <div class="container">
+        <div class="container eqDisplay">
+        <h2 class="row" id="lastEq"> 
+            <span id="firstNum"></span>
+            <span id="operator"></span>
+            <span id="secondNum"></span>
+            <span id="result"></span> 
+        </h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <input type="text" id="calcDisplay" class="col-sm calcField" />
+                <button id="clrBtn" class="col-sm">C</button>
+            </div>
+        </div>
+        <div class="container numBtns">
+            <div class="row">
+                <button class="col-sm key">7</button>
+                <button class="col-sm key">8</button>
+                <button class="col-sm key">9</button>
+                <button class="col-sm opBtn" id="plusBtn">+</button>
+            </div>
+            <div class="row">
+                <button class="col-sm key">4</button>
+                <button class="col-sm key">5</button>
+                <button class="col-sm key">6</button>
+                <button class="col-sm opBtn" id="subBtn">-</button>
+            </div>
+            <div class="row">
+                <button class="col-sm key">1</button>
+                <button class="col-sm key">2</button>
+                <button class="col-sm key">3</button>
+                <button class="col-sm opBtn" id="multBtn">*</button>
+            </div>
+            <div class="row">
+                <button class="col-sm key">0</button>
+                <button class="col-sm key">.</button>
+                <button class="col-sm" id="eqBtn">=</button>
+                <button class="col-sm opBtn" id="diviBtn">/</button>
+            </div>
+            <div class="row">
+                <div class="col-sm calcHist">
+                    <button id="delBtn">Delete History</button>
+                    <ul id="historyList">
+                      <!-- history here -->
+                    </ul>
+                  </div>
+            </div>
+        </div>
     </div>
   </body>
 </html>
