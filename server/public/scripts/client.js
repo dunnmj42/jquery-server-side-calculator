@@ -43,7 +43,7 @@ function renderToDom() {
     $("#historyList").empty();
 
     for (let i = 0; i < history.length; i++) {
-      $("#historyList").append(`<li class="histItem" id="${i}">
+      $("#historyList").append(`<li class="list-group-item histItem" id="${i}">
             ${history[i].firstNum}
             ${history[i].operator}
             ${history[i].secondNum} = 
